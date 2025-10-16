@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การอบรมการเขียนโปรแกรมบนเว็บเพื่อการศึกษา</title>
+    <style>
+        /* --- การตั้งค่าโดยรวม --- */
+        body {
+            font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ที่อ่านง่ายและรองรับภาษาไทย */
+            background-color: #f0f8f0; /* สีพื้นหลังเขียวพาสเทลอ่อนๆ (Honeydew) */
+            color: #333; /* สีตัวอักษรหลัก */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- การจัดโครงสร้างหลัก --- */
+        .container {
+            background-color: #ffffff; /* สีขาวสำหรับกล่องเนื้อหา */
+            padding: 30px 40px;
+            border-radius: 12px; /* ทำให้ขอบมน */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* เพิ่มเงาให้ดูมีมิติ */
+            width: 100%;
+            max-width: 800px; /* ปรับขนาดให้เหมาะสมกับเนื้อหา */
+            text-align: center; /* จัดเนื้อหาให้อยู่ตรงกลาง */
+        }
+
+        header h1 {
+            color: #2E8B57; /* สีเขียวเข้ม (SeaGreen) สำหรับหัวข้อหลัก */
+            margin-bottom: 25px;
+            font-size: 2.2em; /* เพิ่มขนาดหัวข้อให้โดดเด่น */
+        }
+
+        /* --- รูปภาพโปสเตอร์ --- */
+        .poster {
+            width: 100%; /* ทำให้รูปภาพเต็มความกว้างของ container */
+            max-width: 600px; /* กำหนดขนาดใหญ่สุดของรูป */
+            height: auto; /* รักษาอัตราส่วนของรูปภาพ */
+            border-radius: 8px; /* ทำให้ขอบรูปมน */
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- แถบนำทาง (Navigation) --- */
+        nav {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        nav a {
+            text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+            color: #2E8B57; /* สีลิงก์ */
+            margin: 0 10px;
+            padding: 8px 15px; /* ปรับขนาดปุ่ม */
+            border-radius: 20px; /* ทำให้ปุ่มดูมนขึ้น */
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s; /* เพิ่ม Animation ตอนเอาเมาส์ไปชี้ */
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #2E8B57; /* สีพื้นหลังเมื่อเมาส์ชี้ */
+            color: #ffffff; /* สีตัวอักษรเมื่อเมาส์ชี้ */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>การอบรมการเขียนโปรแกรมบนเว็บเพื่อการศึกษา</h1>
+        </header>
+
+        <main>
+            <img class="poster" src="img/ai empower.jpg" alt="โปสเตอร์ประชาสัมพันธ์การอบรม">
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="schedule.html">กำหนดการ</a>
+                <a href="registration.html">ลงทะเบียน</a>
+                <a href="payment.html">แจ้งชำระเงิน</a>
+                <a href="contact.html">ติดต่อ</a>
+            </nav>
+        </footer>
+    </div>
+
+</body>
+</html>

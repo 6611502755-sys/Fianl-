@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงทะเบียนเข้าร่วมอบรม</title>
+    <style>
+        /* --- การตั้งค่าโดยรวม --- */
+        body {
+            font-family: 'Sarabun', sans-serif; /* ฟอนต์ที่อ่านง่ายและรองรับภาษาไทย */
+            background-color: #f0f8f0; /* สีพื้นหลังเขียวพาสเทลอ่อนๆ */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- การจัดโครงสร้างหลัก --- */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 600px; /* ขยายความกว้างสำหรับฟอร์ม */
+        }
+
+        header h1 {
+            color: #2E8B57; /* สีเขียวเข้ม (SeaGreen) */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* --- สไตล์ฟอร์ม --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px; /* ระยะห่างระหว่างช่องกรอกข้อมูล */
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            font-family: 'Sarabun', sans-serif; /* ทำให้ฟอนต์ในช่องกรอกเหมือนกัน */
+            font-size: 1em;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #66CDAA; /* สีเขียวอ่อนเมื่อ focus (MediumAquamarine) */
+            box-shadow: 0 0 5px rgba(102, 205, 170, 0.5);
+        }
+
+        textarea {
+            resize: vertical; /* อนุญาตให้ปรับขนาดแค่แนวตั้ง */
+            min-height: 100px;
+        }
+
+        /* --- สไตล์ปุ่ม --- */
+        button[type="submit"] {
+            background-color: #3CB371; /* สีเขียว (MediumSeaGreen) */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* เพิ่มระยะห่างด้านบนปุ่ม */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2E8B57; /* สีเขียวเข้มขึ้นเมื่อเมาส์ชี้ */
+        }
+
+        /* --- แถบนำทาง (Navigation) --- */
+        nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2E8B57;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #2E8B57;
+            color: #ffffff;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>ลงทะเบียนเข้าร่วมอบรม</h1>
+        </header>
+
+        <main>
+            <form>
+                <div class="form-group">
+                    <label for="fullName">ชื่อ-นามสกุล:</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="กรอกชื่อและนามสกุลของคุณ">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">อีเมล:</label>
+                    <input type="email" id="email" name="email" placeholder="example@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">เบอร์โทรศัพท์:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxx">
+                </div>
+
+                <div class="form-group">
+                    <label for="status">สถานะ/สังกัด:</label>
+                    <select id="status" name="status">
+                        <option value="teacher">ครู/อาจารย์</option>
+                        <option value="staff">บุคลากรทางการศึกษา</option>
+                        <option value="student">นักศึกษา</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="expectation">สิ่งที่คาดหวังจากการอบรม:</label>
+                    <textarea id="expectation" name="expectation" rows="4" placeholder="บอกเราเกี่ยวกับสิ่งที่คุณอยากเรียนรู้..."></textarea>
+                </div>
+
+                <button type="submit">ลงทะเบียน</button>
+            </form>
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="schedule.html">กำหนดการ</a>
+                <a href="registration.html">ลงทะเบียน</a>
+                <a href="payment.html">แจ้งชำระเงิน</a>
+                <a href="contact.html">ติดต่อ</a>
+            </nav>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แจ้งชำระเงิน</title>
+    <style>
+        /* --- การตั้งค่าโดยรวม --- */
+        body {
+            font-family: 'Sarabun', sans-serif; /* ฟอนต์ที่อ่านง่ายและรองรับภาษาไทย */
+            background-color: #f0f8f0; /* สีพื้นหลังเขียวพาสเทลอ่อนๆ */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- การจัดโครงสร้างหลัก --- */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        header h1 {
+            color: #2E8B57; /* สีเขียวเข้ม (SeaGreen) */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* --- สไตล์ฟอร์ม --- */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* เพิ่มระยะห่างระหว่างกลุ่มฟอร์ม */
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="number"],
+        input[type="datetime-local"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box; /* ป้องกัน padding ทำให้ element ล้น */
+            transition: border-color 0.3s;
+        }
+        
+        input[type="file"] {
+            padding: 8px; /* ปรับ padding สำหรับปุ่มเลือกไฟล์ */
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #66CDAA; /* สีเขียวอ่อนเมื่อ focus (MediumAquamarine) */
+            box-shadow: 0 0 5px rgba(102, 205, 170, 0.5);
+        }
+
+        /* --- สไตล์ปุ่ม --- */
+        #paymentBtn {
+            background-color: #3CB371; /* สีเขียว (MediumSeaGreen) */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #paymentBtn:hover {
+            background-color: #2E8B57; /* สีเขียวเข้มขึ้นเมื่อเมาส์ชี้ */
+        }
+        
+        #paymentBtn:disabled {
+            background-color: #a9a9a9; /* สีเทาเมื่อปุ่มถูกปิดใช้งาน */
+            cursor: not-allowed;
+        }
+
+        /* --- แถบนำทาง (Navigation) --- */
+        nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2E8B57;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #2E8B57;
+            color: #ffffff;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>แจ้งการชำระเงิน</h1>
+        </header>
+
+        <main>
+            <form>
+                <div class="form-group">
+                    <label for="amount">ยอดเงิน (บาท):</label>
+                    <input type="number" id="amount" name="amount" placeholder="ระบุจำนวนเงินที่โอน">
+                </div>
+
+                <div class="form-group">
+                    <label for="transferDateTime">วัน/เวลาที่โอน:</label>
+                    <input type="datetime-local" id="transferDateTime" name="transferDateTime">
+                </div>
+
+                <div class="form-group">
+                    <label for="slip">แนบสลิป:</label>
+                    <input type="file" id="slip" name="slip">
+                </div>
+
+                <button type="button" id="paymentBtn" onclick="validatePayment()">ยืนยันการแจ้งชำระเงิน</button>
+            </form>
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="schedule.html">กำหนดการ</a>
+                <a href="registration.html">ลงทะเบียน</a>
+                <a href="payment.html">แจ้งชำระเงิน</a>
+                <a href="contact.html">ติดต่อ</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        function validatePayment() {
+            const amountInput = document.getElementById('amount');
+            const paymentButton = document.getElementById('paymentBtn');
+
+            if (amountInput.value) {
+                alert("แจ้งชำระเงินสำเร็จ! เจ้าหน้าที่จะตรวจสอบภายใน 24 ชม.");
+                paymentButton.textContent = "แจ้งชำระแล้ว";
+                paymentButton.disabled = true;
+            } else {
+                alert("กรุณาระบุยอดเงินที่โอน");
+            }
+        }
+    </script>
+
+</body>
+</html>

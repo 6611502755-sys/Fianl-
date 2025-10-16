@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อสอบถาม</title>
+    <style>
+        /* --- การตั้งค่าโดยรวม --- */
+        body {
+            font-family: 'Sarabun', sans-serif; /* ใช้ฟอนต์ที่อ่านง่ายและรองรับภาษาไทย */
+            background-color: #f0f8f0; /* สีพื้นหลังเขียวพาสเทลอ่อนๆ */
+            color: #333; /* สีตัวอักษรหลัก */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- การจัดโครงสร้างหลัก --- */
+        .container {
+            background-color: #ffffff; /* สีขาวสำหรับกล่องเนื้อหา */
+            padding: 30px 40px;
+            border-radius: 12px; /* ทำให้ขอบมน */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* เพิ่มเงาให้ดูมีมิติ */
+            width: 100%;
+            max-width: 600px;
+            text-align: center; /* จัดเนื้อหาให้อยู่ตรงกลาง */
+        }
+
+        header h1 {
+            color: #2E8B57; /* สีเขียวเข้ม (SeaGreen) สำหรับหัวข้อหลัก */
+            margin-bottom: 25px;
+        }
+
+        /* --- ส่วนของเนื้อหา --- */
+        .contact-info, .time-info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: left; /* จัดเนื้อหาในส่วนนี้ให้ชิดซ้าย */
+            border-left: 5px solid #66CDAA; /* แถบสีเขียวอ่อนด้านซ้าย (MediumAquamarine) */
+        }
+        
+        .contact-info h2, .time-info h3 {
+            margin-top: 0;
+            color: #2E8B57;
+        }
+        
+        .contact-info p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        #current-time {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #20B2AA; /* สีเขียวอมฟ้า (LightSeaGreen) */
+        }
+
+        /* --- แถบนำทาง (Navigation) --- */
+        nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        nav a {
+            text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+            color: #2E8B57; /* สีลิงก์ */
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s; /* เพิ่ม Animation ตอนเอาเมาส์ไปชี้ */
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #2E8B57; /* สีพื้นหลังเมื่อเมาส์ชี้ */
+            color: #ffffff; /* สีตัวอักษรเมื่อเมาส์ชี้ */
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>ติดต่อสอบถาม</h1>
+        </header>
+
+        <main>
+            <section class="contact-info">
+                <h2>ข้อมูลผู้ประสานงาน</h2>
+                <p><strong>ชื่อ:</strong> คุณสมศรี ใจดี</p>
+                <p><strong>เบอร์โทรศัพท์:</strong> 081-234-5678</p>
+                <p><strong>อีเมล:</strong> contact@example.com</p>
+            </section>
+
+            <section class="time-info">
+                <h3>เวลาปัจจุบัน</h3>
+                <p id="current-time">กำลังโหลดเวลา...</p>
+            </section>
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="schedule.html">กำหนดการ</a>
+                <a href="registration.html">ลงทะเบียน</a>
+                <a href="payment.html">แจ้งชำระเงิน</a>
+                <a href="contact.html">ติดต่อ</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        const timeElement = document.getElementById('current-time');
+        const now = new Date();
+        const formattedTime = now.toLocaleString('th-TH', {
+            dateStyle: 'long',
+            timeStyle: 'medium'
+        });
+        timeElement.textContent = formattedTime;
+    </script>
+
+</body>
+</html>

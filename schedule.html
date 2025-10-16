@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>กำหนดการอบรม</title>
+    <style>
+        /* --- การตั้งค่าโดยรวม --- */
+        body {
+            font-family: 'Sarabun', sans-serif; /* ฟอนต์ที่อ่านง่ายและรองรับภาษาไทย */
+            background-color: #f0f8f0; /* สีพื้นหลังเขียวพาสเทลอ่อนๆ */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- การจัดโครงสร้างหลัก --- */
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 800px; /* ขยายความกว้างสำหรับตาราง */
+        }
+
+        header h1 {
+            color: #2E8B57; /* สีเขียวเข้ม (SeaGreen) */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* --- สไตล์ตาราง --- */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* ทำให้เส้นขอบตารางรวมเป็นเส้นเดียว */
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* เส้นคั่นระหว่างแถว */
+        }
+
+        thead th {
+            background-color: #3CB371; /* สีพื้นหลังหัวตาราง */
+            color: white;
+            font-size: 1.1em;
+        }
+
+        /* ทำให้แถวเป็นลายม้าลาย อ่านง่ายขึ้น */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #e9f5e9; /* สีพื้นหลังเมื่อเมาส์ชี้ */
+        }
+        
+        /* จัดคอลัมน์แรกให้ดูเด่นขึ้น */
+        td:first-child {
+            font-weight: bold;
+            color: #2E8B57;
+        }
+
+
+        /* --- แถบนำทาง (Navigation) --- */
+        nav {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2E8B57;
+            margin: 0 8px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover, nav a:focus {
+            background-color: #2E8B57;
+            color: #ffffff;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>กำหนดการอบรม</h1>
+        </header>
+
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>เวลา</th>
+                        <th>หัวข้อการอบรม</th>
+                        <th>วิทยากร</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>09:00 - 10:30 น.</td>
+                        <td>ความรู้เบื้องต้นเกี่ยวกับ HTML & CSS</td>
+                        <td>อ.สมชาย เก่งมาก</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 10:45 น.</td>
+                        <td>พักเบรค</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>10:45 - 12:00 น.</td>
+                        <td>การสร้างฟอร์ม และการจัดการ Input</td>
+                        <td>อ.สมชาย เก่งมาก</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 14:30 น.</td>
+                        <td>แนะนำ JavaScript เบื้องต้น</td>
+                        <td>อ.สมหญิง ยอดเยี่ยม</td>
+                    </tr>
+                    <tr>
+                        <td>14:30 - 16:00 น.</td>
+                        <td>Workshop: สร้างเว็บเพจอย่างง่าย</td>
+                        <td>ทีมวิทยากร</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+        
+        <footer>
+            <nav>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="schedule.html">กำหนดการ</a>
+                <a href="registration.html">ลงทะเบียน</a>
+                <a href="payment.html">แจ้งชำระเงิน</a>
+                <a href="contact.html">ติดต่อ</a>
+            </nav>
+        </footer>
+    </div>
+
+</body>
+</html>
